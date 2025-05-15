@@ -80,6 +80,38 @@ if __name__ == "__main__":
     app.exec()
 ```
 ### 그리고 최종적으로 app.py를 만들었다    
+```
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtCore import QUrl
+from PyQt6.QtGui import QDesktopServices
+from pyQTapp04 import myWindow
+
+Form, Window = uic.loadUiType("res/mainWindow.ui")
+
+class MainWindow:
+    def __init__(self):
+        self.window = Window()
+        self.form = Form()
+        self.form.setupUi(self.window)
+        self.fb_window = myWindow()  # myWindow 인스턴스 생성
+
+        # 메뉴 액션 연결
+        self.form.actionMini_FaceBook.triggered.connect(self.fb_window.lounch)
+        self.form.actionITEDU.triggered.connect(lambda: QDesktopServices.openUrl(QUrl("https://itedu.wsu.ac.kr")))
+        self.form.actionWSU.triggered.connect(lambda: QDesktopServices.openUrl(QUrl("https://www.wsu.ac.kr")))
+
+    def lounch(self):
+        self.window.show()
+
+if __name__ == "__main__":
+    app = QApplication([])
+    mw = MainWindow()
+    mw.lounch()
+    app.exec()
+
+```
+
 이것은 mainWindow로 맨처름 실행 되는 것이다. 여기서 메뉴를 클릭했을때    
 위의 pyQTapp04.py가 실행 되는 것이다.    
 <img width="429" alt="image" src="https://github.com/user-attachments/assets/3eb7a4a1-61cc-4746-9556-2cdefeb2c12a" />

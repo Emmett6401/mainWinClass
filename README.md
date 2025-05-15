@@ -1,11 +1,23 @@
 # mainWinClass
-## 소스코드 설명 
+
+##  실행 화면   
+<img width="429" alt="image" src="https://github.com/user-attachments/assets/3eb7a4a1-61cc-4746-9556-2cdefeb2c12a" />
+
+프로그램은 위와 같이 구성 되어 있다     
+이것은 mainWindow로 맨처름 실행 되는 것이다. 여기서 메뉴를 클릭했을때    
+위의 pyQTapp04.py가 실행 되는 것이다.    
+
+
+
+##  설명 
 
 1. mainWindow 만들기   
 2. Class 단위로 만들기   
 3. 몇개의 Class로 만들어진 APP   
-   
-### pyQTapp01.py
+
+##  소스코드 설명       
+
+### pyQTapp01.py   
 ```
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication
@@ -111,12 +123,6 @@ if __name__ == "__main__":
     app.exec()
 
 ```
-
-이것은 mainWindow로 맨처름 실행 되는 것이다. 여기서 메뉴를 클릭했을때    
-위의 pyQTapp04.py가 실행 되는 것이다.    
-<img width="429" alt="image" src="https://github.com/user-attachments/assets/3eb7a4a1-61cc-4746-9556-2cdefeb2c12a" />
-
-프로그램은 위와 같이 구성 되어 있다     
 
 class,를 사용하는것은 객체를 하나의 최상위 class name으로 관리 하기 위함이다.    
 또한 모듈로 완성된 py 코드는 재활용이 가능하다.     
